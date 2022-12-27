@@ -1,11 +1,12 @@
 from src.yathzee import Yathzee
 import pytest
-# Tests para la parte Upper de la tabla de Yahtzee
 
+# Tests para la parte Upper de la tabla de Yahtzee
 
 # Test para Ace en Upper Section
 
 
+@pytest.mark.aces
 def test_one():
     assert 1 == Yathzee.ones(1, 2, 3, 4, 5)
     assert 2 == Yathzee.ones(1, 1, 5, 4, 2)
@@ -14,6 +15,7 @@ def test_one():
 # Test para Twoes en Upper Section
 
 
+@pytest.mark.twos
 def test_two():
     assert 2 == Yathzee.twos(2, 1, 6, 4, 5)
     assert 6 == Yathzee.twos(2, 2, 6, 5, 2)
@@ -22,6 +24,7 @@ def test_two():
 # Test para Threes en Upper Section
 
 
+@pytest.mark.threes
 def test_three():
     assert 9 == Yathzee.threes(5, 6, 3, 3, 3)
     assert 3 == Yathzee.threes(3, 6, 4, 5, 1)
@@ -30,6 +33,7 @@ def test_three():
 # Test para Fours en Upper Section
 
 
+@pytest.mark.fours
 def test_four():
     assert 16 == Yathzee.fours(4, 6, 4, 4, 4)
     assert 4 == Yathzee.fours(4, 6, 5, 1, 1)
@@ -38,6 +42,7 @@ def test_four():
 # Test para Fives en Upper Section
 
 
+@pytest.mark.fives
 def test_five():
     assert 10 == Yathzee.fives(5, 5, 1, 3, 6)
     assert 15 == Yathzee.fives(5, 5, 1, 6, 5)
@@ -46,6 +51,7 @@ def test_five():
 # Test para Sixes en Upper Section
 
 
+@pytest.mark.sixes
 def test_six():
     assert 6 == Yathzee.sixes(6, 2, 5, 1, 1)
     assert 18 == Yathzee.sixes(6, 4, 6, 1, 6)
