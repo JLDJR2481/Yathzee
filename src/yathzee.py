@@ -4,6 +4,7 @@ class Yathzee:
     def __init__(self,  *dices):
         self.dices = list(dices)
 
+# Funciones para Upper sections
     @staticmethod
     def ones(*dices):
         amount = dices.count(1)
@@ -39,6 +40,8 @@ class Yathzee:
 
         return amount * 6
 
+# Funciones para lower sections
+
     @staticmethod
     def pair(*dices):
         counter = 0
@@ -55,6 +58,7 @@ class Yathzee:
                 counter += i
         return counter
 
+    @staticmethod
     def threeOfaKind(*dices):
         counter = 0
         for i in dices:
@@ -62,6 +66,7 @@ class Yathzee:
                 counter += i
         return counter
 
+    @staticmethod
     def fourOfaKind(*dices):
         counter = 0
         for i in dices:
@@ -69,8 +74,54 @@ class Yathzee:
                 counter += i
         return counter
 
-    # def fullHouse(*dices):
-
-    def smallStraight(*dices):
+    @staticmethod
+    def fullHouse(*dices):
+        pair = False
+        threeOfaKind = False
         dices = sorted(dices, reverse=True)
-        return dices
+        for i in dices:
+            if dices.count(i) == 2:
+                pair = True
+            elif dices.count(i) == 3:
+                threeOfaKind = True
+        if pair and threeOfaKind:
+            return 25
+        else:
+            return 0
+
+    @staticmethod
+    def smallStraight(*dices):
+        straightLst = []
+        dices = sorted(dices)
+        for i in dices:
+            if i == dices[0]:
+                straightLst.append(i)
+                continue
+            elif i != dices[0]:
+                if i == straightLst[-1] + 1:
+                    straightLst.append(i)
+        if len(straightLst) == 4:
+            return 30
+        return 0
+
+    @staticmethod
+    def largeStraight(*dices):
+        if sorted(dices) == list(range(min(dices), max(dices)+1)):
+            return 40
+        else:
+            return 0
+
+    @staticmethod
+    def yathzee(*dices):
+        for i in dices:
+            if dices.count(i) == 5:
+                return 50
+            else:
+                return 0
+
+    @staticmethod
+    def chance(*dices):
+        counter = 0
+        for i in dices:
+            counter += i
+        return counter
