@@ -38,3 +38,39 @@ class Yathzee:
                 amount += 1
 
         return amount * 6
+
+    @staticmethod
+    def pair(*dices):
+        counter = 0
+        for i in dices:
+            if dices.count(i) == 2:
+                counter += i
+        return counter
+
+    @staticmethod
+    def doublePair(*dices):
+        counter = 0
+        for i in dices:
+            if dices.count(i) == 2:
+                counter += i
+        return counter
+
+    def threeOfaKind(*dices):
+        counter = 0
+        for i in dices:
+            if dices.count(i) == 3:
+                counter += i
+        return counter
+
+    def fourOfaKind(*dices):
+        counter = 0
+        for i in dices:
+            if dices.count(i) == 4:
+                counter += i
+        return counter
+
+    # def fullHouse(*dices):
+
+    def smallStraight(*dices):
+        dices = sorted(dices, reverse=True)
+        return dices
