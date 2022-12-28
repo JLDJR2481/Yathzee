@@ -15,7 +15,7 @@
 
 El codigo original no es de mi propiedad. Todos los derechos se otorgan a [**Emily Bache**](https://github.com/emilybache). Por favor, hagan click en el nombre para acceder a su perfil de Github.
 
-Además, este es el repositorio original, el cual tiene varios ficheros para distintos lenguajes. Se recomienda informarse desde [aquí](https://github.com/emilybache/Yatzy-Refactoring-Kata).
+Además, este **NO** es el repositorio original, el cual tiene varios ficheros para distintos lenguajes. Se recomienda acceder al mismo desde [aquí](https://github.com/emilybache/Yatzy-Refactoring-Kata).
 
 Por último, esto es solo una refactorización del código original. Dicho código se accede desde el fichero originalCode.
 
