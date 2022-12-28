@@ -38,25 +38,25 @@ def test_fourOfaKind():
 
 @pytest.mark.full_house
 def test_fullHouse():
-    assert 25 == Yathzee.fullHouse(4, 4, 4, 2, 2)
+    assert 16 == Yathzee.fullHouse(4, 4, 4, 2, 2)
     assert 0 == Yathzee.fullHouse(4, 4, 1, 1, 2)
-    assert 25 == Yathzee.fullHouse(6, 6, 2, 2, 2)
-    assert 25 == Yathzee.fullHouse(5, 3, 5, 3, 5)
+    assert 18 == Yathzee.fullHouse(6, 6, 2, 2, 2)
+    assert 21 == Yathzee.fullHouse(5, 3, 5, 3, 5)
 
 
 @pytest.mark.small_straight
 def test_smallStraight():
-    assert 30 == Yathzee.smallStraight(1, 2, 3, 6, 4)
+    assert 16 == Yathzee.smallStraight(1, 2, 3, 6, 4)
     assert 0 == Yathzee.smallStraight(1, 6, 5, 4, 2)
-    assert 30 == Yathzee.smallStraight(6, 4, 2, 3, 1)
+    assert 16 == Yathzee.smallStraight(6, 4, 2, 3, 1)
     assert 0 == Yathzee.smallStraight(6, 5, 4, 3, 1)
 
 
 @pytest.mark.large_straight
 def test_largeStraight():
-    assert 40 == Yathzee.largeStraight(1, 2, 3, 4, 5)
+    assert 15 == Yathzee.largeStraight(1, 2, 3, 4, 5)
     assert 0 == Yathzee.largeStraight(6, 1, 3, 2, 4)
-    assert 40 == Yathzee.largeStraight(6, 5, 4, 3, 2)
+    assert 20 == Yathzee.largeStraight(6, 5, 4, 3, 2)
     assert 0 == Yathzee.largeStraight(1, 5, 4, 2, 6)
 
 
