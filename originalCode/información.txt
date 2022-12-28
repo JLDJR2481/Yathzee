@@ -1,0 +1,3 @@
+Github de Emily Bache: https://github.com/emilybache
+
+Repositorio original: https://github.com/emilybache/Yatzy-Refactoring-Kata
