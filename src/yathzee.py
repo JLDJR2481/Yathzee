@@ -12,8 +12,8 @@ class Yathzee:
 
     @staticmethod
     def twos(*dices):
-        amount = dices.count(2)
-        return amount * 2
+        total = dices.count(2)
+        return total * 2
 
     @staticmethod
     def threes(*dices):
@@ -79,13 +79,16 @@ class Yathzee:
         pair = False
         threeOfaKind = False
         dices = sorted(dices, reverse=True)
+        amount = 0
         for i in dices:
+            amount += i
             if dices.count(i) == 2:
                 pair = True
             elif dices.count(i) == 3:
                 threeOfaKind = True
+
         if pair and threeOfaKind:
-            return 25
+            return amount
         else:
             return 0
 
@@ -101,13 +104,13 @@ class Yathzee:
                 if i == straightLst[-1] + 1:
                     straightLst.append(i)
         if len(straightLst) == 4:
-            return 30
+            return sum(dices)
         return 0
 
     @staticmethod
     def largeStraight(*dices):
         if sorted(dices) == list(range(min(dices), max(dices)+1)):
-            return 40
+            return sum(dices)
         else:
             return 0
 
