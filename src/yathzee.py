@@ -1,7 +1,7 @@
 class Yathzee:
 
     @staticmethod
-    def __init__(self,  *dices):
+    def __init__(self, *dices):
         self.dices = list(dices)
 
 # Funciones para Upper sections
@@ -45,34 +45,50 @@ class Yathzee:
     @staticmethod
     def pair(*dices):
         counter = 0
+        dices = sorted(dices)
         for i in dices:
             if dices.count(i) == 2:
-                counter += i
-        return counter
+                if i != counter:
+                    counter = 0
+                    counter += i
+        return counter * 2
 
     @staticmethod
     def doublePair(*dices):
-        counter = 0
+        actualPairs = []
+        dices = sorted(dices)
         for i in dices:
-            if dices.count(i) == 2:
-                counter += i
-        return counter
+            if dices.count(i) >= 2:
+                if i not in actualPairs:
+                    actualPairs.append(i)
+
+        if len(actualPairs) == 2:
+            return (sum(actualPairs) * 2)
+        else:
+            return 0
 
     @staticmethod
     def threeOfaKind(*dices):
         counter = 0
+        die = 0
         for i in dices:
-            if dices.count(i) == 3:
-                counter += i
-        return counter
+            if dices.count(i) >= 3 and counter < 3:
+                counter += 1
+                if die == 0:
+                    die += i
+
+        return die * counter
 
     @staticmethod
     def fourOfaKind(*dices):
         counter = 0
+        die = 0
         for i in dices:
-            if dices.count(i) == 4:
-                counter += i
-        return counter
+            if dices.count(i) >= 4 and counter < 4:
+                counter += 1
+                if die == 0:
+                    die += i
+        return counter * die
 
     @staticmethod
     def fullHouse(*dices):
@@ -103,7 +119,7 @@ class Yathzee:
             elif i != dices[0]:
                 if i == straightLst[-1] + 1:
                     straightLst.append(i)
-        if len(straightLst) == 4:
+        if len(straightLst) >= 4:
             return sum(dices)
         return 0
 
@@ -128,3 +144,9 @@ class Yathzee:
         for i in dices:
             counter += i
         return counter
+
+
+if __name__ == "__main__":
+    #assert 12 == Yathzee(4, 4, 4, 5, 5).fours()
+    #assert 10 == Yathzee(4, 4, 4, 5, 5).fives()
+    assert 18 == Yathzee(6, 5, 6, 6, 5).sixes()
