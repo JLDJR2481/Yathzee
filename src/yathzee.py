@@ -1,6 +1,5 @@
 class Yathzee:
 
-    @staticmethod
     def __init__(self, *dices):
         self.dices = list(dices)
 
@@ -19,26 +18,18 @@ class Yathzee:
     def threes(*dices):
         return (dices.count(3) * 3)
 
-    @staticmethod
-    def fours(*dices):
-        count = 0
-        for i in dices:
-            if i == 4:
-                count += 4
-        return count
+    def fours(self):
+        return self.dices.count(4) * 4
 
-    @staticmethod
-    def fives(*dices):
-        return dices.count(5) * 5
+    def fives(self):
+        return self.dices.count(5) * 5
 
-    @staticmethod
-    def sixes(*dices):
-        amount = 0
-        for i in dices:
+    def sixes(self):
+        counter = 0
+        for i in self.dices:
             if i == 6:
-                amount += 1
-
-        return amount * 6
+                counter += 6
+        return counter
 
 # Funciones para lower sections
 
@@ -144,9 +135,3 @@ class Yathzee:
         for i in dices:
             counter += i
         return counter
-
-
-if __name__ == "__main__":
-    #assert 12 == Yathzee(4, 4, 4, 5, 5).fours()
-    #assert 10 == Yathzee(4, 4, 4, 5, 5).fives()
-    assert 18 == Yathzee(6, 5, 6, 6, 5).sixes()
