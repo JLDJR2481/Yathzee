@@ -1,7 +1,6 @@
 class Yathzee:
 
-    @staticmethod
-    def __init__(self,  *dices):
+    def __init__(self, *dices):
         self.dices = list(dices)
 
 # Funciones para Upper sections
@@ -19,60 +18,68 @@ class Yathzee:
     def threes(*dices):
         return (dices.count(3) * 3)
 
-    @staticmethod
-    def fours(*dices):
-        count = 0
-        for i in dices:
-            if i == 4:
-                count += 4
-        return count
+    def fours(self):
+        return self.dices.count(4) * 4
 
-    @staticmethod
-    def fives(*dices):
-        return dices.count(5) * 5
+    def fives(self):
+        return self.dices.count(5) * 5
 
-    @staticmethod
-    def sixes(*dices):
-        amount = 0
-        for i in dices:
+    def sixes(self):
+        counter = 0
+        for i in self.dices:
             if i == 6:
-                amount += 1
-
-        return amount * 6
+                counter += 6
+        return counter
 
 # Funciones para lower sections
 
     @staticmethod
     def pair(*dices):
         counter = 0
+        dices = sorted(dices)
         for i in dices:
             if dices.count(i) == 2:
-                counter += i
-        return counter
+                if i != counter:
+                    counter = 0
+                    counter += i
+        return counter * 2
 
     @staticmethod
     def doublePair(*dices):
-        counter = 0
+        actualPairs = []
+        dices = sorted(dices)
         for i in dices:
-            if dices.count(i) == 2:
-                counter += i
-        return counter
+            if dices.count(i) >= 2:
+                if i not in actualPairs:
+                    actualPairs.append(i)
+
+        if len(actualPairs) == 2:
+            return (sum(actualPairs) * 2)
+        else:
+            return 0
 
     @staticmethod
     def threeOfaKind(*dices):
         counter = 0
+        die = 0
         for i in dices:
-            if dices.count(i) == 3:
-                counter += i
-        return counter
+            if dices.count(i) >= 3 and counter < 3:
+                counter += 1
+                if die == 0:
+                    die += i
+
+        return die * counter
 
     @staticmethod
     def fourOfaKind(*dices):
         counter = 0
+        die = 0
         for i in dices:
-            if dices.count(i) == 4:
-                counter += i
-        return counter
+            if dices.count(i) >= 4 and counter < 4:
+                counter += 1
+                if die == 0:
+                    die += i
+        return counter * die
 
     @staticmethod
     def fullHouse(*dices):
@@ -103,7 +110,7 @@ class Yathzee:
             elif i != dices[0]:
                 if i == straightLst[-1] + 1:
                     straightLst.append(i)
-        if len(straightLst) == 4:
+        if len(straightLst) >= 4:
             return sum(dices)
         return 0
 
