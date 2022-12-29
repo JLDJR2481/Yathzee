@@ -7,9 +7,11 @@
   - [**Yatzy Refactoring Kata**](#yatzy-refactoring-kata)
   - [**Kata Description**](#kata-description)
 - [**Normas, requisitos y puntuación**](#normas-requisitos-y-puntuación)
-  - [**¿Qué hace falta?**](#¿qué-hace-falta)
+  - [**Material requerido**](#material-requerido)
   - [**Normas**](#normas)
   - [**Puntuación**](#puntuación)
+- [**Información extra**](#información-extra)
+  - [**Información sobre las ramas**](#información-sobre-las-ramas-git)
 
 ## Antes de empezar
 
@@ -33,7 +35,7 @@ The problem that this code is designed to solve is explained here: [Yatzy](https
 
 ## **Normas, requisitos y puntuación**
 
-### ¿Qué hace falta?
+### Material requerido
 
 - 5 dados
 - Un tablero Yatzhee para anotar la puntuación obtenida
@@ -78,3 +80,7 @@ El tablero Yatzhee se divide en 2 secciones:
    - Total of Lower Section: Puntuación total de la parte inferior
    - Total of Upper Section: Puntuación total de la parte superior
    - Grand Total: Suma de todas las partes
+
+## Información extra
+### Información sobre las ramas Git
+![image](https://user-images.githubusercontent.com/115024410/209984451-3e09a947-81a1-43e9-8d70-7f6be23db75b.png)
