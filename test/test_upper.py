@@ -54,5 +54,5 @@ def test_five():
 @pytest.mark.sixes
 def test_six():
     assert 6 == Yathzee(6, 2, 5, 1, 1).sixes()
-    assert 18 == Yathzee.sixes(6, 4, 6, 1, 6).sixes()
-    assert 12 == Yathzee.sixes(6, 2, 1, 4, 6).sixes()
+    assert 18 == Yathzee(6, 4, 6, 1, 6).sixes()
+    assert 12 == Yathzee(6, 2, 1, 4, 6).sixes()
